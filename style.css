@@ -4131,7 +4131,7 @@ section:not(.overlay) > div:first-child {
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 2rem !important;
     width: 100%;
-    margin: 2.5rem auto 0;
+    margin: 5rem auto 0;
     text-align: left;
 }
 
@@ -4671,7 +4671,7 @@ section:not(.overlay) > div:first-child {
     display: flex;
     align-items: stretch;
     gap: 3rem;
-    margin-top: 4rem;
+    margin-top: 5rem;
     text-align: left;
 }
 
@@ -5120,7 +5120,10 @@ section:not(.overlay) > div:first-child {
         justify-content: center;
     }
     .name {
-        font-size: 2.75rem;
+        /* !important nécessaire : une règle plus bas dans le fichier
+           (section "CORRECTIONS GLOBALES", non scopée à un breakpoint)
+           force .name à 64px avec !important, sinon inopérant ici. */
+        font-size: 2.75rem !important;
     }
     .home-cta {
         margin-top: 1.6rem;
@@ -5146,7 +5149,7 @@ section:not(.overlay) > div:first-child {
         height: 210px;
     }
     .name {
-        font-size: 2.25rem;
+        font-size: 2.25rem !important;
     }
 }
 
