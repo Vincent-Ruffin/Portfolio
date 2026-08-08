@@ -5150,6 +5150,14 @@ section:not(.overlay) > div:first-child {
     }
 }
 
+/* --- Hero : le nom passe sur 2 lignes en dessous de 768px (line-height
+   hérité de l'affichage 1 ligne desktop, trop serré une fois empilé) --- */
+@media (max-width: 768px) {
+    .name {
+        line-height: 1.25;
+    }
+}
+
 /* --- Navbar : bouton menu centré verticalement au repos,
    panneau déroulant recalé sur toute la largeur de l'écran --- */
 @media (max-width: 780px) {
@@ -5162,6 +5170,17 @@ section:not(.overlay) > div:first-child {
         top: 50%;
         right: 1.25rem;
         transform: translateY(-50%);
+        padding: 0;
+    }
+
+    /* L'icône SVG (☰ / ✕) elle-même : le padding+line-height hérité de
+       l'ancien design (pensé pour du texte "☰") ne centre pas un SVG.
+       On la centre explicitement dans le bouton 60×60. */
+    .menu > a.hamburger svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .menu {
