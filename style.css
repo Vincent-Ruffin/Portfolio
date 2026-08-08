@@ -5086,3 +5086,84 @@ section:not(.overlay) > div:first-child {
     8%   { opacity: 1; }
     to   { stroke-dashoffset: 0;    opacity: 1; }
 }
+
+/* ==========================================
+   FIX RESPONSIVE MOBILE — Nav & Hero
+   Neutralise les anciennes règles (héritées d'une
+   précédente version du design) qui cassaient la mise
+   en page du hero et le centrage du bouton menu en
+   dessous de 768/780px.
+   ========================================== */
+
+/* --- Hero : colonne centrée, photo au-dessus du texte --- */
+@media (max-width: 768px) {
+    .homePres {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+    .hero-text {
+        align-items: center;
+        text-align: center;
+        order: 2;
+    }
+    .hero-visual {
+        order: 1;
+        width: 200px;
+    }
+    .hero-visual::before {
+        width: 260px;
+        height: 260px;
+    }
+    .home-tags,
+    .home-cta {
+        justify-content: center;
+    }
+    .name {
+        font-size: 2.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-visual {
+        width: 160px;
+    }
+    .hero-visual::before {
+        width: 210px;
+        height: 210px;
+    }
+    .name {
+        font-size: 2.25rem;
+    }
+}
+
+/* --- Navbar : bouton menu centré verticalement au repos,
+   panneau déroulant recalé sur toute la largeur de l'écran --- */
+@media (max-width: 780px) {
+    /* Le bouton (☰ / ✕) reste ancré en haut à droite de la pill,
+       indépendamment de l'état ouvert/fermé du panneau : position
+       fixed + le transform de nav (ancêtre) sert de repère, donc
+       .menu (absolute) n'intercepte pas ce calcul. */
+    .menu > a.hamburger {
+        position: fixed;
+        top: 50%;
+        right: 1.25rem;
+        transform: translateY(-50%);
+    }
+
+    .menu {
+        position: static;
+        gap: 0;
+    }
+    .menu.open {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -50vw;
+        width: 100vw;
+    }
+    .menu.open > a:not(.hamburger) {
+        width: 100%;
+        padding: 0 1.6rem;
+    }
+}
