@@ -5122,6 +5122,19 @@ section:not(.overlay) > div:first-child {
     .name {
         font-size: 2.75rem;
     }
+    .home-cta {
+        margin-top: 1.6rem;
+        margin-bottom: 1.6rem;
+    }
+
+    /* Le contenu du hero (photo + nom + tags + CTA) est plus haut que
+       la zone réellement visible sur mobile une fois la barre d'adresse
+       Safari/Chrome affichée (100vh ≠ hauteur visible réelle) : l'indice
+       de scroll, positionné en absolute, finit par chevaucher le nom.
+       Sur mobile le scroll est de toute façon évident, donc on le masque. */
+    .scrollDown {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
