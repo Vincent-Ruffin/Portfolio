@@ -5203,3 +5203,81 @@ section:not(.overlay) > div:first-child {
         padding: 0 1.6rem;
     }
 }
+
+/* ==========================================
+   TRUST — "Ils m'ont fait confiance"
+   Bande de logos en défilement infini (façon owl-carousel),
+   en CSS pur — pas de dépendance JS supplémentaire.
+   ========================================== */
+#trust {
+    background: #ffffff;
+    padding: 4.5rem 0 5.5rem;
+}
+
+.trust-label {
+    display: block;
+    text-align: center;
+    margin-bottom: 2.8rem;
+}
+
+.trust-track-wrap {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.trust-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: 6rem;
+    animation: trustScroll 24s linear infinite;
+}
+
+.trust-track:hover {
+    animation-play-state: paused;
+}
+
+.trust-logo {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+}
+
+.trust-logo img {
+    height: 100%;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.55;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.trust-logo img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+@keyframes trustScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+    .trust-track {
+        gap: 4rem;
+    }
+    .trust-logo {
+        height: 44px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .trust-track {
+        animation: none;
+    }
+}
