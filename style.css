@@ -1990,6 +1990,7 @@ p, li {
                     .parallax {
     height: 20rem;
     width: 100%;
+    margin-top: 4rem;
 
     padding: 1.6rem!important;
 
