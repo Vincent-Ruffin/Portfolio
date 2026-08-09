@@ -4717,9 +4717,9 @@ section:not(.overlay) > div:first-child {
 }
 
 .skills-list li {
-    font-size: 1.5rem !important;   /* 15px */
+    font-size: 1.7rem !important;   /* 17px */
     color: #374151 !important;
-    padding-left: 1.4rem;
+    padding-left: 1.5rem;
     position: relative;
     line-height: 1.5;
 }
@@ -4728,9 +4728,9 @@ section:not(.overlay) > div:first-child {
     content: '';
     position: absolute;
     left: 0;
-    top: 0.6rem;
-    width: 5px;
-    height: 5px;
+    top: 0.7rem;
+    width: 7px;
+    height: 7px;
     background: var(--color-accent);
     border-radius: 50%;
 }
@@ -5280,4 +5280,20 @@ section:not(.overlay) > div:first-child {
     .trust-track {
         animation: none;
     }
+}
+
+/* ==========================================
+   PORTFOLIO — logo qui ne doit pas être recadré
+   Le logo SGS (comme d'autres logos à venir) est un visuel large avec
+   beaucoup de marge blanche : object-fit:cover (comportement par
+   défaut de .portImg, pensé pour des photos) rognait les bords du
+   texte "SGS", donnant l'impression que le logo débordait de la carte.
+   ========================================== */
+.portImg-contain {
+    background: #ffffff;
+}
+
+.portImg-contain img {
+    object-fit: contain !important;
+    padding: 1.6rem;
 }
