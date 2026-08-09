@@ -4304,6 +4304,10 @@ section:not(.overlay) > div:first-child {
     margin-bottom: 0.4rem;
 }
 
+.overlay ul:not(.techList) li::marker {
+    font-size: 2rem;
+}
+
 .overlay ul.techList {
     background: rgba(93, 138, 168, 0.07);
     border-radius: 12px;
