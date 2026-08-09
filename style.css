@@ -5295,5 +5295,5 @@ section:not(.overlay) > div:first-child {
 
 .portImg-contain img {
     object-fit: contain !important;
-    padding: 1.6rem;
+    padding: 4rem;
 }
