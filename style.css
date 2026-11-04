@@ -5313,3 +5313,31 @@ section:not(.overlay) > div:first-child {
     object-fit: contain !important;
     padding: 4rem;
 }
+/* ==========================================
+   Grille Portfolio : cartes de la dernière ligne centrées
+   (flex-wrap au lieu de grid, même largeur de carte)
+   ========================================== */
+.port {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.port > .project {
+    flex: 0 0 calc((100% - 2 * 2rem) / 3);
+    max-width: calc((100% - 2 * 2rem) / 3);
+}
+
+@media (max-width: 900px) {
+    .port > .project {
+        flex-basis: calc((100% - 2rem) / 2);
+        max-width: calc((100% - 2rem) / 2);
+    }
+}
+
+@media (max-width: 560px) {
+    .port > .project {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
