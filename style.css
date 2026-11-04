@@ -5341,3 +5341,20 @@ section:not(.overlay) > div:first-child {
         max-width: 100%;
     }
 }
+
+/* ==========================================
+   Images des cartes : pleine largeur de la carte, centrées
+   (remplace les anciennes tailles fixes 36rem x 30rem / 95vw
+   qui laissaient une bande vide à droite)
+   ========================================== */
+.port > .project > .portImg {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 6 / 5;
+}
+
+.port > .project > .portImg > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-position: center;
+}
